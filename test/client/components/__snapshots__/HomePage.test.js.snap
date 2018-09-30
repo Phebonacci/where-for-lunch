@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Jest snapshot, HomePage component disables and greys out the search Button when no latitude is fetched 1`] = `
+<div
+  className="homePageWrapper"
+>
+  <Place />
+  <div
+    className="searchWrapper"
+  >
+    <div
+      className="root"
+    >
+      <span>
+        radius:
+      </span>
+      <div
+        className="root"
+      >
+        <input
+          defaultValue={500}
+          onBlur={[Function]}
+          type="text"
+        />
+      </div>
+      <span>
+        meters
+      </span>
+    </div>
+    <button
+      className="root homepageClick disabled"
+      disabled={true}
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`With Jest snapshot, HomePage component enables the search Button when a latitude is fetched 1`] = `
+<div
+  className="homePageWrapper"
+>
+  <Place />
+  <div
+    className="searchWrapper"
+  >
+    <div
+      className="root"
+    >
+      <span>
+        radius:
+      </span>
+      <div
+        className="root"
+      >
+        <input
+          defaultValue={500}
+          onBlur={[Function]}
+          type="text"
+        />
+      </div>
+      <span>
+        meters
+      </span>
+    </div>
+    <button
+      className="root homepageClick disabled"
+      disabled={true}
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
