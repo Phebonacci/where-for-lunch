@@ -8,7 +8,7 @@ import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
 import Condition from 'components/Condition/Condition';
 
-class HomePage extends Component {
+export class HomePage extends Component {
   handleOnClick = () => {
     this.props.fetchPlaces(this.props.condition);
   }
@@ -23,7 +23,10 @@ class HomePage extends Component {
         <Place place={place} />
         <div className="searchWrapper">
           <Condition condition={condition} action={this.handleOnConditionChange}/>
-          <Button onClick={this.handleOnClick} theme="homepageClick" />
+          <Button
+            onClick={this.handleOnClick}
+            theme="homepageClick"
+            isDisabled={!condition.isLocationAvailable} />
         </div>
       </div>
     );

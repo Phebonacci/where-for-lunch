@@ -3,6 +3,7 @@ import * as actionTypes from 'actions/conditionActionTypes';
 
 const initialState = {
   radius: 500,
+  isLocationAvailable: false,
 };
 const conditionReducer = handleActions(
   {
@@ -11,7 +12,8 @@ const conditionReducer = handleActions(
     },
     [actionTypes.SET_LAT_LNG](state, action) {
       const { latitude, longitude } = action.payload;
-      return { ...state, latitude, longitude };
+      const isLocationAvailable = typeof latitude !== 'undefined';
+      return { ...state, latitude, longitude, isLocationAvailable };
     },
   },
   initialState,
