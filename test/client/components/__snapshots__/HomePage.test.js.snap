@@ -8,25 +8,7 @@ exports[`With Jest snapshot, HomePage component disables and greys out the searc
   <div
     className="searchWrapper"
   >
-    <div
-      className="root"
-    >
-      <span>
-        radius:
-      </span>
-      <div
-        className="root"
-      >
-        <input
-          defaultValue={500}
-          onBlur={[Function]}
-          type="text"
-        />
-      </div>
-      <span>
-        meters
-      </span>
-    </div>
+    <PlaceCondition />
     <button
       className="root homepageClick disabled"
       disabled={true}
@@ -44,25 +26,7 @@ exports[`With Jest snapshot, HomePage component enables the search Button when a
   <div
     className="searchWrapper"
   >
-    <div
-      className="root"
-    >
-      <span>
-        radius:
-      </span>
-      <div
-        className="root"
-      >
-        <input
-          defaultValue={500}
-          onBlur={[Function]}
-          type="text"
-        />
-      </div>
-      <span>
-        meters
-      </span>
-    </div>
+    <PlaceCondition />
     <button
       className="root homepageClick disabled"
       disabled={true}

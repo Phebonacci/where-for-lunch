@@ -4,6 +4,7 @@ import { HomePage } from 'client/containers/HomePage';
 import renderer from 'react-test-renderer';
 
 jest.mock('components/Place/Place', () => 'Place');
+jest.mock('containers/PlaceCondition', () => 'PlaceCondition');
 
 test('With Enzyme, HomePage component disables out the search Button when no latitude is fetched', () => {
   const condition = { radius: 500 };

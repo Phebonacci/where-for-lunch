@@ -11,7 +11,7 @@ import sagas from 'sagas';
 import App from 'containers/App';
 import HomePage from 'containers/HomePage';
 import apiConfig from 'services/apiConfig';
-import { fetchLatLng } from 'lib/navigatorHelper';
+import { fetchLatLng, fetchPricingLevels } from 'lib/navigatorHelper';
 import 'index.css';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -26,6 +26,7 @@ apiConfig();
 sagaMiddleware.run(sagas);
 
 fetchLatLng(store);
+fetchPricingLevels(store);
 
 const history = createHistory();
 render(

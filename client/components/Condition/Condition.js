@@ -1,22 +1,34 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Input from 'components/Input/Input';
+import Checkbox from 'components/Checkbox/Checkbox';
 import styles from './Condition.css';
 
 export default class Condition extends PureComponent {
-  static propTypes = {
-    condition: PropTypes.object,
-    action: PropTypes.func,
-  };
-
   handleOnBlurAction = (e) => {
-    this.props.action(e.target.value);
+    this.props.setRadius(e.target.value);
+  }
+
+  handleOnPriceToggled = (e) => {
+    this.props.setPriceSelection(e.target.value);
   }
 
   render() {
-    const { condition: { radius } } = this.props;
+    const { condition: { radius }, priceLevels } = this.props;
     return (
       <div className={styles.root}>
+        <span>price:</span>
+        {
+          priceLevels && priceLevels.map((priceLevel) => {
+            return (
+              <Checkbox
+                key={priceLevel.key}
+                value={priceLevel.value}
+                onChange={this.handleOnPriceToggled} />
+            );
+          })
+        }
+
         <span>radius:</span>
         <Input defaultValue={radius} onBlurAction={this.handleOnBlurAction}></Input>
         <span>meters</span>
@@ -24,3 +36,10 @@ export default class Condition extends PureComponent {
     );
   }
 }
+
+Condition.propTypes = {
+  condition: PropTypes.object,
+  priceLevels: PropTypes.arrayOf(PropTypes.object),
+  setRadius: PropTypes.func,
+  setPriceSelection: PropTypes.func,
+};

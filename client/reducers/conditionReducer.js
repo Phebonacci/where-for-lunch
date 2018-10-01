@@ -15,6 +15,10 @@ const conditionReducer = handleActions(
       const isLocationAvailable = typeof latitude !== 'undefined';
       return { ...state, latitude, longitude, isLocationAvailable };
     },
+    [actionTypes.SET_PRICE_SELECTION](state, action) {
+      const { priceSelections } = action.payload;
+      return { ...state, priceSelections };
+    },
   },
   initialState,
 );

@@ -1,6 +1,9 @@
 import {
   SET_LAT_LNG,
 } from 'actions/conditionActionTypes';
+import {
+  FETCH_PRICING_LEVELS,
+} from 'actions/pricingActionTypes';
 
 export function fetchLatLng(store) {
   navigator.geolocation.getCurrentPosition((position) => {
@@ -10,5 +13,11 @@ export function fetchLatLng(store) {
     });
   }, (err) => {
     console.log('give it to me! ', err);
+  });
+}
+
+export function fetchPricingLevels(store) {
+  store.dispatch({
+    type: FETCH_PRICING_LEVELS,
   });
 }

@@ -14,6 +14,8 @@ export function* fetchPricingLevels() {
   }
 }
 
-export function* pricingLevelSagas() {
+function* pricingLevelSagas() {
   yield takeEvery(FETCH_PRICING_LEVELS, fetchPricingLevels);
 }
+
+export default pricingLevelSagas;
