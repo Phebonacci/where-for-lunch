@@ -6,6 +6,7 @@ module.exports = {
     '^components/(.*)': '<rootDir>/../client/components/$1',
     '^containers/(.*)': '<rootDir>/../client/containers/$1',
     '^actions(.*)': '<rootDir>/../client/actions$1',
+    '^reducers(.*)': '<rootDir>/../client/reducers$1',
     '^sagas(.*)': '<rootDir>/../client/sagas$1',
     '^services(.*)': '<rootDir>/../client/services$1',
     '^constants(.*)': '<rootDir>/../client/constants$1',

@@ -1,5 +1,7 @@
 @import '../../styles/variables.css';
 
 .root {
-
+  input[type=checkbox] {
+    vertical-align: middle;
+  }
 }

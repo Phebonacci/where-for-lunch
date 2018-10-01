@@ -1,13 +1,12 @@
 import { handleActions } from 'redux-actions';
 import * as actionTypes from 'actions/pricingActionTypes';
 
-const initialState = {
-  pricingLevels: [],
-};
+const initialState = [];
 const pricingReducer = handleActions(
   {
     [actionTypes.SET_PRICING_LEVELS](state, action) {
-      return { ...state, ...action.payload };
+      console.log('state', state);
+      return [...action.payload];
     },
   },
   initialState,

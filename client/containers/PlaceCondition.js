@@ -5,7 +5,7 @@ import conditionActions from 'actions/conditionActions';
 
 const mapStateToProps = state => ({
   condition: state.condition,
-  priceLevels: state.priceLevels,
+  pricingLevels: state.pricingLevels,
 });
 
 const mapDispatchToProps = dispatch =>

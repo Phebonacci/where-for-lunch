@@ -14,21 +14,22 @@ export default class Condition extends PureComponent {
   }
 
   render() {
-    const { condition: { radius }, priceLevels } = this.props;
+    const { condition: { radius }, pricingLevels } = this.props;
     return (
       <div className={styles.root}>
         <span>price:</span>
         {
-          priceLevels && priceLevels.map((priceLevel) => {
+          pricingLevels && pricingLevels.map((priceLevel) => {
             return (
               <Checkbox
-                key={priceLevel.key}
+                key={priceLevel.value}
+                label={priceLevel.key}
                 value={priceLevel.value}
                 onChange={this.handleOnPriceToggled} />
             );
           })
         }
-
+        {' '}
         <span>radius:</span>
         <Input defaultValue={radius} onBlurAction={this.handleOnBlurAction}></Input>
         <span>meters</span>
@@ -39,7 +40,7 @@ export default class Condition extends PureComponent {
 
 Condition.propTypes = {
   condition: PropTypes.object,
-  priceLevels: PropTypes.arrayOf(PropTypes.object),
+  pricingLevels: PropTypes.arrayOf(PropTypes.object),
   setRadius: PropTypes.func,
   setPriceSelection: PropTypes.func,
 };
