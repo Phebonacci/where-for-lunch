@@ -15,3 +15,24 @@ export async function searchPlaces(params) {
     console.log('search failed!', e);
   }
 }
+
+export function getPricingLevels() {
+  return [
+    {
+      key: '$',
+      value: 1,
+    },
+    {
+      key: '$$',
+      value: 2,
+    },
+    {
+      key: '$$$',
+      value: 3,
+    },
+    {
+      key: '$$$$',
+      value: 4,
+    },
+  ];
+}

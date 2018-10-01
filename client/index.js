@@ -10,6 +10,7 @@ import rootReducer from 'reducers';
 import sagas from 'sagas';
 import App from 'containers/App';
 import HomePage from 'containers/HomePage';
+import apiConfig from 'services/apiConfig';
 import { fetchLatLng } from 'lib/navigatorHelper';
 import 'index.css';
 
@@ -19,6 +20,8 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
+
+apiConfig();
 
 sagaMiddleware.run(sagas);
 

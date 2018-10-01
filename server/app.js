@@ -1,5 +1,6 @@
 import express from 'express';
 import places from './routes/places';
+import pricing from './routes/pricing';
 
 const app = express();
 
@@ -9,5 +10,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/places', places);
+app.use('/api/pricing', pricing);
 
 export default app;
